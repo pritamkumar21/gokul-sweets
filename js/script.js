@@ -30,3 +30,26 @@ document.querySelectorAll(".price").forEach(function (priceElement) {
     }
 
 });
+
+// ==========================================
+// MOBILE MENU
+// ==========================================
+
+// ==========================================
+// MOBILE MENU
+// ==========================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    if (menuToggle && navMenu) {
+
+        menuToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("active");
+        });
+
+    }
+
+});

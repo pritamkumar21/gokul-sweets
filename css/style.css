@@ -531,10 +531,6 @@ a {
 
 @media (max-width: 900px) {
 
-    .nav-menu {
-        display: none;
-    }
-
     .hero-content,
     .about-content {
         grid-template-columns: 1fr;
@@ -562,11 +558,109 @@ a {
 }
 
 
-@media (max-width: 600px) {
+/* =========================
+   MOBILE HEADER
+========================= */
+
+.menu-toggle {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+
+    .navbar {
+        position: relative;
+    }
+
+    /* Hamburger button */
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 42px;
+        height: 42px;
+
+        margin-left: auto;
+
+        background: #7a1f1f;
+        color: #ffffff;
+
+        border: none;
+        border-radius: 8px;
+
+        font-size: 24px;
+        line-height: 1;
+
+        cursor: pointer;
+
+        position: relative;
+        z-index: 1001;
+    }
+
+
+    /* Hide desktop navigation */
+
+    .nav-menu {
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        background: #7a1f1f;
+
+        flex-direction: column;
+        align-items: center;
+
+        padding: 10px 0;
+
+        z-index: 1000;
+
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+
+    /* Show menu */
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+
+    /* Menu links */
+
+    .nav-menu a {
+        display: block;
+
+        width: 100%;
+
+        padding: 14px 20px;
+
+        text-align: center;
+
+        color: #ffffff;
+    }
+
+
+    .nav-menu a:hover {
+        background: rgba(255, 255, 255, 0.12);
+    }
+
+
+    /* Hide header Call button on mobile */
 
     .call-button {
         display: none;
     }
+
+
+    /* Mobile hero */
 
     .hero {
         padding: 60px 0;
@@ -576,19 +670,31 @@ a {
         font-size: 38px;
     }
 
+
+    /* Mobile sweets */
+
     .sweet-grid {
         grid-template-columns: 1fr;
     }
 
+
+    /* Mobile gallery */
+
     .gallery-grid {
         grid-template-columns: 1fr;
     }
+
+
+    /* Mobile headings */
 
     .section-heading h2,
     .about-text h2,
     .contact-section h2 {
         font-size: 32px;
     }
+
+
+    /* Mobile buttons */
 
     .hero-buttons,
     .contact-buttons {
@@ -599,4 +705,5 @@ a {
     .secondary-button {
         text-align: center;
     }
+
 }
