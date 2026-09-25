@@ -81,6 +81,19 @@ a {
 
 
 /* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.mobile-menu-checkbox {
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+
+/* =========================
    HERO
 ========================= */
 
@@ -186,7 +199,7 @@ a {
 
 
 /* =========================
-   SECTION COMMON
+   COMMON SECTIONS
 ========================= */
 
 .sweets-section,
@@ -273,13 +286,6 @@ a {
 /* =========================
    ABOUT
 ========================= */
-.about-shop-image {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    border-radius: 25px;
-    display: block;
-}
 
 .about-section {
     background: #f8ead8;
@@ -290,6 +296,14 @@ a {
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
+}
+
+.about-shop-image {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 25px;
+    display: block;
 }
 
 .about-text h2 {
@@ -332,10 +346,20 @@ a {
 }
 
 
-
 /* =========================
    GALLERY
 ========================= */
+
+.gallery-section {
+    background: #ffffff;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
 .gallery-item {
     height: 220px;
     border-radius: 15px;
@@ -352,16 +376,6 @@ a {
 
 .gallery-item:hover img {
     transform: scale(1.05);
-}
-
-.gallery-section {
-    background: #ffffff;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
 }
 
 .gallery-placeholder {
@@ -441,6 +455,60 @@ a {
 
 
 /* =========================
+   GOOGLE MAP
+========================= */
+
+.map-section {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.map-section h3 {
+    color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+}
+
+.map-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 22px;
+    padding: 14px 28px;
+    background: #ffffff;
+    color: #7a1f1f;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.18);
+    transition: all 0.3s ease;
+}
+
+.map-button:hover {
+    background: #7a1f1f;
+    color: #ffffff;
+    border-color: #ffffff;
+    transform: translateY(-3px);
+}
+
+
+/* =========================
    FOOTER
 ========================= */
 
@@ -466,68 +534,10 @@ a {
     opacity: 0.7;
 }
 
-/* ==========================================
-   GOOGLE MAP
-========================================== */
 
-.map-section {
-    margin-top: 50px;
-    text-align: center;
-}
-
-.map-section h3 {
-    color: #ffffff;
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.map-container {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 20px;
-    border: 3px solid rgba(255, 255, 255, 0.2);
-}
-
-.map-container iframe {
-    display: block;
-}
-/* Google Maps Button */
-
-.map-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 22px;
-    padding: 14px 28px;
-
-    background: #ffffff;
-    color: #7a1f1f;
-
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 700;
-
-    border: 2px solid #ffffff;
-    border-radius: 50px;
-
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.18);
-
-    transition: all 0.3s ease;
-}
-
-.map-button:hover {
-    background: #7a1f1f;
-    color: #ffffff;
-    border-color: #ffffff;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-}
-
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
+/* ==================================================
+   TABLET
+================================================== */
 
 @media (max-width: 900px) {
 
@@ -558,22 +568,24 @@ a {
 }
 
 
-/* =========================
-   MOBILE HEADER
-========================= */
-
-.menu-toggle {
-    display: none;
-}
-
+/* ==================================================
+   MOBILE
+================================================== */
 
 @media (max-width: 768px) {
 
+    /* ---------- HEADER ---------- */
+
     .navbar {
         position: relative;
+        min-height: 65px;
     }
 
-    /* Hamburger button */
+    .logo {
+        font-size: 24px;
+    }
+
+    /* Hamburger */
 
     .menu-toggle {
         display: flex;
@@ -588,26 +600,29 @@ a {
         background: #7a1f1f;
         color: #ffffff;
 
-        border: none;
         border-radius: 8px;
 
         font-size: 24px;
-        line-height: 1;
+        font-weight: bold;
 
         cursor: pointer;
 
         position: relative;
-        z-index: 1001;
+        z-index: 1002;
     }
 
+    /* Hide checkbox */
 
-    /* Hide desktop navigation */
+    .mobile-menu-checkbox {
+        display: none;
+    }
+
+    /* Mobile navigation */
 
     .nav-menu {
         display: none;
 
         position: absolute;
-
         top: 100%;
         left: 0;
 
@@ -620,24 +635,19 @@ a {
 
         padding: 10px 0;
 
-        z-index: 1000;
+        z-index: 1001;
 
         box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     }
 
+    /* Open menu */
 
-    /* Show menu */
-
-    .nav-menu.active {
+    .mobile-menu-checkbox:checked ~ .nav-menu {
         display: flex;
     }
 
-
-    /* Menu links */
-
     .nav-menu a {
         display: block;
-
         width: 100%;
 
         padding: 14px 20px;
@@ -645,22 +655,22 @@ a {
         text-align: center;
 
         color: #ffffff;
-    }
 
+        font-weight: 600;
+    }
 
     .nav-menu a:hover {
         background: rgba(255, 255, 255, 0.12);
     }
 
-
-    /* Hide header Call button on mobile */
+    /* Hide header Call button */
 
     .call-button {
         display: none;
     }
 
 
-    /* Mobile hero */
+    /* ---------- HERO ---------- */
 
     .hero {
         padding: 60px 0;
@@ -670,22 +680,30 @@ a {
         font-size: 38px;
     }
 
+    .hero-shop-image {
+        height: 350px;
+    }
 
-    /* Mobile sweets */
+
+    /* ---------- SWEETS ---------- */
 
     .sweet-grid {
         grid-template-columns: 1fr;
     }
 
 
-    /* Mobile gallery */
+    /* ---------- GALLERY ---------- */
 
     .gallery-grid {
         grid-template-columns: 1fr;
     }
 
+    .gallery-item {
+        height: 240px;
+    }
 
-    /* Mobile headings */
+
+    /* ---------- HEADINGS ---------- */
 
     .section-heading h2,
     .about-text h2,
@@ -694,7 +712,7 @@ a {
     }
 
 
-    /* Mobile buttons */
+    /* ---------- BUTTONS ---------- */
 
     .hero-buttons,
     .contact-buttons {
@@ -703,7 +721,79 @@ a {
 
     .primary-button,
     .secondary-button {
+        width: 100%;
         text-align: center;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    .about-shop-image {
+        height: 350px;
+    }
+
+
+    /* ---------- MAP ---------- */
+
+    .map-container iframe {
+        height: 350px;
+    }
+
+}
+
+
+/* ==================================================
+   SMALL PHONES
+================================================== */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-shop-image {
+        height: 280px;
+        border-radius: 18px;
+    }
+
+    .about-shop-image {
+        height: 280px;
+        border-radius: 18px;
+    }
+
+    .sweet-image {
+        height: 210px;
+    }
+
+    .gallery-item {
+        height: 210px;
+    }
+
+    .section-heading h2,
+    .about-text h2,
+    .contact-section h2 {
+        font-size: 28px;
+    }
+
+    .contact-item {
+        padding: 20px 15px;
+    }
+
+    .map-container {
+        border-radius: 12px;
+    }
+
+    .map-container iframe {
+        height: 300px;
     }
 
 }
